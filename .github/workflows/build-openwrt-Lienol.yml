@@ -9,6 +9,12 @@
 name: OpenWrt-x86-Lienol
 
 on:
+   repository_dispatch:
+   workflow_dispatch:
+    inputs:
+      ip_addr:
+        description: '固件 IP 地址 [可选]'
+        default: ''
 # release:
 #   types: published
 # push:
@@ -16,10 +22,10 @@ on:
 #     - master
 #   paths:
 #     - 'Lienol'
-   schedule:
-     - cron: 0 20 * * *
-   watch:
-     types: started
+#   schedule:
+#     - cron: 0 20 * * *
+#   watch:
+#     types: started
   
 env:
   REPO_URL: https://github.com/Lienol/openwrt
